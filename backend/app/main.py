@@ -4,11 +4,10 @@ import shutil
 from flask import request, send_file
 from flask.views import MethodView
 
-from config import Config
-
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask()
 
@@ -29,7 +28,7 @@ class FileManagementView(MethodView):
         self.dirs = []
         self.files = []
         self.current_path = []
-        self.base_path = Config.BASE_PATH + "/"
+        self.base_path = basedir + "/"
 
     def get(self):
         """

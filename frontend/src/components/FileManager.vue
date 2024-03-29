@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import axios from "axios";
 import { onBeforeMount, defineAsyncComponent } from "vue";
 
 const ManagerForm = defineAsyncComponent(
   () => import("../components/ManagerForm.vue")
 );
 
+const server = "http://127.0.0.1:8000";
+// const server = "";
+
 onBeforeMount( async () => {
-  fileManager.value.path = props.path.slice(0, -1);
   await fileManager.value.openFolder();
 });
 

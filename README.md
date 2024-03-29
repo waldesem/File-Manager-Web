@@ -1,23 +1,21 @@
-# FileManager-Web (broken now)
+# FileManager-Web (in dev now)
 
 FileManager-Web is a web interface for managing a localhost folders and files.
 
 ### The main technology stack used in this project includes:
 
 - Python 3;
-- FastAPI;
+- Flask;
 - Vue3;
-- Bootstrap 5.
+- Bootstrap
 
 ### Installation
-
-To use this project, you will need to have Python 3.10 or higher installed on your local machine.
 
 For installiing the required Python packages run the following command in the terminal:
 
 ```
 sudo apt install python3 python3-pip python3-venv # if not install venv yet
-git clone https://github.com/waldesem/Web-Personal-DB.git
+git clone https://github.com/waldesem/File-Manager-Web.git
 cd backend
 python3 -m venv venv
 source venv/bin/activate
@@ -29,7 +27,6 @@ pip install -r requirements.txt
 To start the application at http://localhost:5000 run the following command in your terminal:
 
 ```
-flask create       # create default tables and populate them with data from the classes.py file
 gunicorn -c gunicorn.conf.py wsgi:app  # start the gunicorn server with the settings in gunicorn.conf.py
 ```
 
