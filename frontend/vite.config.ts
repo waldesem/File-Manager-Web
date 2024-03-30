@@ -10,28 +10,10 @@ export default defineConfig({
         find: "@",
         replacement: fileURLToPath(new URL("./src", import.meta.url)),
       },
-      {
-        find: "@store",
-        replacement: fileURLToPath(new URL("./src/store", import.meta.url)),
-      },
-      {
-        find: "@utilities",
-        replacement: fileURLToPath(new URL("./src/utilities", import.meta.url)),
-      },
-      {
-        find: "@router",
-        replacement: fileURLToPath(new URL("./src/router", import.meta.url)),
-      },
-      {
-        find: "@components",
-        replacement: fileURLToPath(
-          new URL("./src/components", import.meta.url)
-        ),
-      },
     ],
   },
   build: {
-    outDir: "../backend/app/static",
+    outDir: "../backend/static",
     emptyOutDir: true,
   },
   define: {

@@ -7,10 +7,11 @@ const ManagerForm = defineAsyncComponent(
   () => import("../components/ManagerForm.vue")
 );
 
-const server = "http://127.0.0.1:8000";
+const server = "http://127.0.0.1:3000";
 // const server = "";
 
 onBeforeMount( async () => {
+  fileManager.value.path = ["/"];
   await fileManager.value.openFolder();
 });
 
@@ -204,11 +205,9 @@ function fileType(file: string): string {
 
 <template>
   <div class="container py-3">
-    <div class="text-opacity-85 py-5">
+    <div class="text-opacity-85 text-primary mb-5">
     <h3>Файловый менеджер</h3>
     </div>
-    <HeaderDiv page-header="Файловый менеджер" />
-
     <div class="border border-primary p-5">
       <div class="row border border-primary p-3">
         <div class="col-1">
@@ -414,7 +413,7 @@ function fileType(file: string): string {
 
 <style scoped>
 #fileManager {
-  height: 50vh;
+  height: 75vh;
   overflow-y: auto;
 }
 .item-wrapper {
