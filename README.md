@@ -1,4 +1,4 @@
-# FileManager-Web (in dev now)
+# FileManager-Web (experimental)
 
 FileManager-Web is a web interface for managing a localhost folders and files.
 

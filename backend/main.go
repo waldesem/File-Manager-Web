@@ -25,9 +25,12 @@ func main() {
 		return c.SendString("Hello, World!")
 	})
 
-	managerGroup := app.Group("/manager")
-	managerGroup.Get("/", GetFiles)
-	managerGroup.Post("/:action", PostFiles)
+	app.Get("/manager", func(c *fiber.Ctx) error {
+		return GetFiles(c)
+	})
+	app.Post("/manager/:action", func(c *fiber.Ctx) error {
+		return PostFiles(c)
+	})
 
 	app.Listen(":3000")
 }

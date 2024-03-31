@@ -11,12 +11,11 @@ const server = "http://127.0.0.1:3000";
 // const server = "";
 
 onBeforeMount( async () => {
-  fileManager.value.path = ["/"];
-  await fileManager.value.openFolder();
+  await fileManager.value.getFoldersFiles();
 });
 
 const fileManager = ref({
-  path: Array<string>(),
+  path: ["/"],
   folders: Array<string>(),
   files: Array<string>(),
   selected: Array<string>(),
